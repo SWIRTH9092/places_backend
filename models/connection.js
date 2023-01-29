@@ -11,16 +11,15 @@ const mongoose = require("mongoose");
 const DATABASE_URL = process.env.DATABASE_URL;
 const CONFIG = {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
 };
-
 //-------------------------------------------
 // establish connection
 //-------------------------------------------
+mongoose.set("strictQuery", false);
 mongoose.connect(DATABASE_URL, CONFIG);
 
 //Events for when connection opens/disconnects/errors
-mongoose.set("strictQuery", false);
 mongoose.connection 
     .on("open", () => console.log("Connected to Mongoose"))
     .on("close", () => console.log("Disconnected from Mongoose"))

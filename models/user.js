@@ -5,21 +5,21 @@
 const mongoose = require("./connection")
 
 //-------------------------------------------
-// Define WorldPlace Model
+// Define User Model
 //-------------------------------------------
 // pull schema and model from mongoose
 const { Schema, model } = mongoose;
 
 // make user schema
-const UserSchema = new Schema({
-    username: { type: String },
-    password: { type: String },
+const userSchema = new Schema({
+    username: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
     email: { type: String }
 
-});
+}, {timestamps: true});
 
-// make WorldPlace model
-const User = model("User", UserSchema);
+// make User model
+const User = model("User", userSchema);
 
 //-------------------------------------------
 // Export Place Model
