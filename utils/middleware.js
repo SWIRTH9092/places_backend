@@ -14,6 +14,7 @@ const cors = require('cors');    // required for cors
 //----------------------------
 const GeneralRouter = require("../routers/general");
 const PlaceRouter = require("../routers/place");
+const UserRouter = require("../routers/user")
 
 ///----------------------------
 //  middleware
@@ -28,6 +29,7 @@ const middleware = (app) => {
   //----------------------------
 
   app.use("/place", PlaceRouter); 
+  app.use("/user", UserRouter)
   app.use("/", GeneralRouter);
 }  
 
