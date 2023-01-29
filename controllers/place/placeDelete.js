@@ -3,12 +3,12 @@
 //----------------------------
 
 // for MongoDB database
-const Place = require("../../models/place")
+const WorldPlace = require("../../models/worldplace")
 
 const placeDelete = async (req, res) => {
     try {
         // send place to delete
-        res.json(await Place.findByIdAndRemove(req.params.id))
+        res.json(await WorldPlace.findByIdAndRemove(req.params.id))
     } catch (error) {
         //send error
         res.status(400).json(error);
