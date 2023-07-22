@@ -6,7 +6,7 @@ const express = require('express');
 const bcrpyt = require("bcryptjs")
 const morgan = require('morgan');  // required for logging
 const cors = require('cors');    // required for cors
-
+//*const auth = require('./auth')
 //  model for place
 // const Place = require("./models/place")
 
